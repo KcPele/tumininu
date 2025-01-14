@@ -1,6 +1,7 @@
 import * as React from "react";
 import { ProjectCard as ProjectCardType } from "../types";
 import Image from "next/image";
+import { LuArrowRight } from "react-icons/lu";
 
 interface ProjectCardProps {
   project: ProjectCardType;
@@ -42,20 +43,17 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           tabIndex={0}
         >
           <span>View Case Study</span>
-          <img
-            loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/b2d4719cf4304179a70cb2f57ac77167/fd9c6d60f6230efd9a2a554d2898048cfd7ef233fc9be34e54682dfcb41bdcea?apiKey=b2d4719cf4304179a70cb2f57ac77167&"
-            alt=""
-            className="object-contain shrink-0 self-stretch my-auto w-6 aspect-square"
-          />
+          <LuArrowRight size={18} className="text-lime-950" />
         </a>
       </div>
-      <img
-        loading="lazy"
-        src={project.imageUrl}
-        alt={`${project.title} project preview`}
-        className="object-contain mt-6 w-full rounded-lg aspect-[1.66] max-md:max-w-full"
-      />
+      <div className="relative mt-6 w-full rounded-lg aspect-[1.66] max-md:max-w-full">
+        <Image
+          src={project.imageUrl}
+          alt={`${project.title} project preview`}
+          layout="fill"
+          className="object-contain rounded-lg"
+        />
+      </div>
     </article>
   );
 };
