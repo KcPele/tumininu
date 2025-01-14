@@ -50,7 +50,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <Image
           src={project.imageUrl}
           alt={`${project.title} project preview`}
-          layout="fill"
+          fill
           className="object-contain rounded-lg"
         />
       </div>
